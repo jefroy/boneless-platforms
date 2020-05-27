@@ -10,7 +10,6 @@ public class EnemyController : MonoBehaviour
     public float rangeX = 2f;
     private Vector3 initialPos;
     private int directionY = 1;
-    private int directionX = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +20,8 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         //make it move on the y (vertically)
-        float movementY, factorY, movementX, factorX, newY, newX;
-        if(directionY == -1) factorY = speedY + 1f; // if enemy is moving down, move faster
+        float movementY, factorY, newY;
+        if (directionY == -1) factorY = speedY + 1f; // if enemy is moving down, move faster
         else factorY = speedY;
 
         // how much y moved
@@ -30,7 +29,7 @@ public class EnemyController : MonoBehaviour
         // new y position
         newY = transform.position.y + movementY;
         //check to see if we went outside the range, change direction if true
-        if(Mathf.Abs(newY - initialPos.y) > rangeY) directionY *= -1; // flip the position if newY takes us out of the range
+        if (Mathf.Abs(newY - initialPos.y) > rangeY) directionY *= -1; // flip the position if newY takes us out of the range
         else transform.position += new Vector3(0, movementY, 0); // otherwise, move along y.
     }
 }
