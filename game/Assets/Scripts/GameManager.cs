@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
         {
             this.playerLives = 100;
             this.levelScore = 100;
+            this.playerScore = 100;
             this.playerLives = 100;
             this.defaultLives = 100;
             this.maxLevels = 100;
