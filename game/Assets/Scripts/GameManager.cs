@@ -30,8 +30,25 @@ public class GameManager : MonoBehaviour
         //prevent this object from being destroyed when switching scenes
         DontDestroyOnLoad(gameObject);
 
+        // check for sub special:
+        CheckStage();
+
         // find hud manager object
         hudManager = FindObjectOfType<HudManager>();
+    }
+
+    // check for sub special:
+    private void CheckStage()
+    {
+        if(SceneManager.GetActiveScene().name == "Level100")
+        {
+            this.playerLives = 100;
+            this.levelScore = 100;
+            this.playerLives = 100;
+            this.defaultLives = 100;
+            this.maxLevels = 100;
+            this.currentLevel = 100;
+        }
     }
     
     // increase player score

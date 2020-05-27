@@ -10,4 +10,10 @@ public class HomeUiManager : MonoBehaviour
         // load level 1 scene
         SceneManager.LoadScene("Level1");
     }
+
+    // start level 1 when user clicks the button
+    public void StartSubSpecial(){
+        // load level 1 scene
+        SceneManager.LoadScene("Level100");
+    }
 }
