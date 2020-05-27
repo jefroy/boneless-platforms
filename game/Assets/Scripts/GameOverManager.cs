@@ -28,6 +28,11 @@ public class GameOverManager : MonoBehaviour
         SceneManager.LoadScene("Level1");
     }
 
+    // exit
+    public void QuitGame(){
+        Application.Quit();
+    }
+
     public void DetermineWin(){
         string text;
         if(GameManager.instance.playerLives > 0) text = "You Win!";
